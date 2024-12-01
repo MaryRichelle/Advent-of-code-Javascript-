@@ -4,6 +4,7 @@ const fs = require("fs");
 const left = [];
 const right = [];
 let total = 0;
+let OccurrencesCount = 0
 
 function addToArray(arrayOfNumbers, number) {
   arrayOfNumbers.push(Number(number));
@@ -26,3 +27,15 @@ for (let i = 0; i < arrayOfData.length; i++) {
   total += Math.abs(left[i] - right[i]);
 }
 log(total);
+
+
+for (let i = 0; i < left.length; i++) {
+  let count = 0;
+  for (let j = 0; j < right.length; j++) {
+    if (left[i] === right[j]) {
+      count++;
+    }
+  }
+  OccurrencesCount += left[i] * count;
+}
+log(OccurrencesCount)
