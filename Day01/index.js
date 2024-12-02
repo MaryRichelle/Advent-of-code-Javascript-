@@ -1,5 +1,10 @@
 const { log } = require("console");
-const fs = require("fs");
+
+const path = require("path");
+const readFile = require(path.resolve(__dirname, "../main.js")); 
+
+const data = readFile("./data.txt");
+const arrayOfData = data.trim().split('\n');
 
 const left = [];
 const right = [];
@@ -13,8 +18,6 @@ function sortArray(array) {
   return array.sort((a, b) => a - b);
 }
 
-const data = fs.readFileSync('./data.txt', 'utf8');
-const arrayOfData = data.trim().split('\n');
 
 for (const line of arrayOfData) {
   const [a, b] = line.split(/\s+/);
