@@ -1,5 +1,4 @@
 const { log } = require("console");
-
 const path = require("path");
 const readFile = require(path.resolve(__dirname, "../main.js"));
 const data = readFile("./data.txt");
